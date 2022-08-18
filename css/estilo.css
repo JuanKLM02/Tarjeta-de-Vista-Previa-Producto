@@ -1,7 +1,7 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
 :root{--buttonC:hsl(158, 36%, 37%);--fondoC:hsl(30, 38%, 92%);--tituloC:hsl(212, 21%, 14%);--subtC:hsl(228, 12%, 48%);}
 body{background: var(--fondoC);}
-.section{
+main{
     width: 80%;
     height: auto;
     margin:  auto;
@@ -15,7 +15,6 @@ body{background: var(--fondoC);}
     border-radius: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    gap: 0;
 }
 .container-card{
     width: 100%;
@@ -27,16 +26,16 @@ body{background: var(--fondoC);}
     background-size: cover;
     border-radius: 5px 0 0 5px;
 }
-.texto{padding: 25px;}
-.texto h1{
+.container-texto{padding: 25px;}
+.container-texto h1{
     width: 90%;
     margin-top: 15px;
     font-size: 35px;
     font-family: 'Fraunces', serif;
     font-weight: 700;
-    line-height: 30px;
+    line-height: 35px;
 }
-.texto h3{
+.text{
     font-family: 'Monserrat';
     font-size: 15px;
     font-weight: 700;
@@ -51,11 +50,9 @@ body{background: var(--fondoC);}
     border-radius: 5px;
     display: flex;
     flex-flow: row wrap;
-    gap: 55px;
     justify-content: center;
     align-items: center;
 }
-.boton-card a{color: red;list-style: none; text-decoration: none; }
 .boton-card img{
     padding: 5px 0;
     float: left;
@@ -63,9 +60,11 @@ body{background: var(--fondoC);}
     place-content: center;
 }
 .boton-card h3{
+    font-weight: 700;
+    letter-spacing: 3px;
     float: left;
-    padding: 5px 0;
-    margin-left: 15px;
+    padding: 3px 10px;
+    margin-left: 10px;
     color: whitesmoke;
 }
 .boton-card:hover{
@@ -74,7 +73,7 @@ body{background: var(--fondoC);}
 }
 /* ---------------> Media Queryes <------------ */
 @media(min-width:1200px) and (max-width:1800px){
-    .section{max-width: 80%;height: auto;}
+    main{max-width: 80%;height: auto;}
     .container{max-width: 50%;height: auto;}
     .container-card{
         width: 100%;
@@ -82,13 +81,12 @@ body{background: var(--fondoC);}
         background-image: url(/images/image-product-desktop.jpg);
         background-position: center;
         background-size: cover;
-        border-radius: 5px 5px 0 0;
+        border-radius: 5px 0 0 5px;
     }
-    .texto h2{font-size: 38px;}
 }
 
 @media(min-width:876px) and (max-width:1024px){
-    .section{width: 100%;}
+    main{width: 100%;}
     .container{width: 70%;}
     .container-card{
         width: 100%;
@@ -96,19 +94,18 @@ body{background: var(--fondoC);}
         background-image: url(/images/image-product-desktop.jpg);
         background-position: center;
         background-size: cover;
-        border-radius: 5px 5px 0 0;
+        border-radius: 5px 0 0 5px;
     }
-    .texto h2{font-size: 38px;}
 }
 @media(min-width:576px) and (max-width:875px){
-    .section{
+    main{
         width: 100%;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr ;
     }
     .container{
-        width: 95%; 
+        width: 70%; 
         margin: auto;
         display: grid;
         grid-template-rows: 1fr 1fr ;
@@ -122,10 +119,22 @@ body{background: var(--fondoC);}
         background-size: cover;
         border-radius: 5px 5px 0 0;
     }
-    .texto h2{font-size: 38px;}
+    .container-texto{
+        width: 90%;
+        margin: auto;
+        text-align: left;
+        padding: 25px;
+    }
+    .text{
+        font-family: 'Fraunces', serif;
+        font-size: 22px;
+        color: var(--subtC);
+    }
+    .boton-card img{width: 25px;}
+    .boton-card h3{letter-spacing: 5px;color: var(--fondoC);}
 }
-@media(max-width:575px) and (min-width:275px) {
-    .section{
+@media(max-width:575px) and (min-width:276px) {
+    main{
         width: 100%;
         display: grid;
         grid-template-columns: 1fr;
@@ -146,6 +155,10 @@ body{background: var(--fondoC);}
         background-size: cover;
         border-radius: 5px 5px 0 0;
     }
-    .texto h2{font-size: 38px;}
+    .container-texto{width: 100%; margin: auto;}
+    .text{
+        font-size: 22px;
+    }
 }
+
 /* <---------- End Media Query ------------->*/
